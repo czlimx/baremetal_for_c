@@ -1,0 +1,426 @@
+The target system is: Generic -  - cortex-a15
+The host system is: Linux - 5.10.102.1-microsoft-standard-WSL2 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc 
+Build flags: -march=armv7-a;-marm;-mtune=cortex-a15;-mfpu=vfpv3-d16;-mfloat-abi=hard;;-fno-builtin;-fdata-sections;-ffunction-sections;-fno-exceptions;-nostdlib;-fno-builtin;-mno-unaligned-access
+Id flags:  
+
+The output was:
+0
+/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/3.16.3/CompilerIdC/a.out"
+
+Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.07) 10.3.1 20210621 (release)
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++ 
+Build flags: -march=armv7-a;-marm;-mtune=cortex-a15;-mfpu=vfpv3-d16;-mfloat-abi=hard;;-fno-builtin;-fdata-sections;-ffunction-sections;-fno-exceptions;-nostdlib;-fno-builtin;-mno-unaligned-access
+Id flags:  
+
+The output was:
+0
+/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/3.16.3/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0846b/fast && /usr/bin/make -f CMakeFiles/cmTC_0846b.dir/build.make CMakeFiles/cmTC_0846b.dir/build
+make[1]: Entering directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0846b.dir/testCCompiler.c.obj
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc   -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access    -o CMakeFiles/cmTC_0846b.dir/testCCompiler.c.obj   -c /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_0846b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0846b.dir/link.txt --verbose=1
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access   -march=armv7-a -marm -mtune=cortex-a15 --specs=nosys.specs -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections -Wl,--print-memory-usage   CMakeFiles/cmTC_0846b.dir/testCCompiler.c.obj  -o cmTC_0846b 
+/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+Memory region         Used Size  Region Size  %age Used
+make[1]: Leaving directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_325bf/fast && /usr/bin/make -f CMakeFiles/cmTC_325bf.dir/build.make CMakeFiles/cmTC_325bf.dir/build
+make[1]: Entering directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc   -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access    -v -o CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc
+Target: arm-none-eabi
+Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile
+Thread model: single
+Supported LTO compression algorithms: zlib
+gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) 
+COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/cc1 -quiet -v -imultilib thumb/v7-a+fp/hard -iprefix /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/ -isysroot /home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard -mno-unaligned-access -mlibarch=armv7-a+fp -march=armv7-a+fp -auxbase-strip CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj -version -fdata-sections -ffunction-sections -fno-exceptions -fno-builtin -o /tmp/cc6D7bPH.s
+GNU C17 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)
+	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include"
+ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/local/include"
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include-fixed"
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"
+ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include
+End of search list.
+GNU C17 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)
+	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 0ae10b4fdb68a799c7765007746184f2
+COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/as -v -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -meabi=5 -o CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj /tmp/cc6D7bPH.s
+GNU assembler version 2.36.1 (arm-none-eabi) using BFD version (GNU Arm Embedded Toolchain 10.3-2021.07) 2.36.1.20210621
+COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+Linking C executable cmTC_325bf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_325bf.dir/link.txt --verbose=1
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access   -march=armv7-a -marm -mtune=cortex-a15 --specs=nosys.specs -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections -Wl,--print-memory-usage  -v CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj  -o cmTC_325bf 
+Using built-in specs.
+Reading specs from /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/nosys.specs
+rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
+COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc
+COLLECT_LTO_WRAPPER=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper
+Target: arm-none-eabi
+Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile
+Thread model: single
+Supported LTO compression algorithms: zlib
+gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) 
+COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access'  '-marm' '-mtune=cortex-a15' '-specs=nosys.specs' '-nostartfiles' '-nodefaultlibs' '-nostdlib' '-v' '-o' 'cmTC_325bf' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/collect2 -plugin /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/liblto_plugin.so -plugin-opt=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc414Mkc.res --sysroot=/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -X -o cmTC_325bf -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1 -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib --gc-sections --print-memory-usage CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj
+/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+Memory region         Used Size  Region Size  %age Used
+COLLECT_GCC_OPTIONS='-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access'  '-marm' '-mtune=cortex-a15' '-specs=nosys.specs' '-nostartfiles' '-nodefaultlibs' '-nostdlib' '-v' '-o' 'cmTC_325bf' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+make[1]: Leaving directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include]
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed]
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include]
+  end of search list found
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include]
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include-fixed]
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include]
+  implicit include dirs: [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include;/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include-fixed;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_325bf/fast && /usr/bin/make -f CMakeFiles/cmTC_325bf.dir/build.make CMakeFiles/cmTC_325bf.dir/build]
+  ignore line: [make[1]: Entering directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc   -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access    -v -o CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc]
+  ignore line: [Target: arm-none-eabi]
+  ignore line: [Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile]
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) ]
+  ignore line: [COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/cc1 -quiet -v -imultilib thumb/v7-a+fp/hard -iprefix /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/ -isysroot /home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard -mno-unaligned-access -mlibarch=armv7-a+fp -march=armv7-a+fp -auxbase-strip CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj -version -fdata-sections -ffunction-sections -fno-exceptions -fno-builtin -o /tmp/cc6D7bPH.s]
+  ignore line: [GNU C17 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include"]
+  ignore line: [ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/local/include"]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include-fixed"]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"]
+  ignore line: [ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 0ae10b4fdb68a799c7765007746184f2]
+  ignore line: [COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/as -v -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -meabi=5 -o CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj /tmp/cc6D7bPH.s]
+  ignore line: [GNU assembler version 2.36.1 (arm-none-eabi) using BFD version (GNU Arm Embedded Toolchain 10.3-2021.07) 2.36.1.20210621]
+  ignore line: [COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  ignore line: [Linking C executable cmTC_325bf]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_325bf.dir/link.txt --verbose=1]
+  ignore line: [/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access   -march=armv7-a -marm -mtune=cortex-a15 --specs=nosys.specs -nostartfiles -nodefaultlibs -nostdlib -Wl --gc-sections -Wl --print-memory-usage  -v CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj  -o cmTC_325bf ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/nosys.specs]
+  ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
+  ignore line: [COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper]
+  ignore line: [Target: arm-none-eabi]
+  ignore line: [Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile]
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) ]
+  ignore line: [COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access'  '-marm' '-mtune=cortex-a15' '-specs=nosys.specs' '-nostartfiles' '-nodefaultlibs' '-nostdlib' '-v' '-o' 'cmTC_325bf' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  link line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/collect2 -plugin /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/liblto_plugin.so -plugin-opt=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc414Mkc.res --sysroot=/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -X -o cmTC_325bf -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1 -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib --gc-sections --print-memory-usage CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj]
+    arg [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc414Mkc.res] ==> ignore
+    arg [--sysroot=/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi] ==> ignore
+    arg [-X] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_325bf] ==> ignore
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib]
+    arg [--gc-sections] ==> ignore
+    arg [--print-memory-usage] ==> ignore
+    arg [CMakeFiles/cmTC_325bf.dir/CMakeCCompilerABI.c.obj] ==> ignore
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib/thumb/v7-a+fp/hard]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib/thumb/v7-a+fp/hard]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib]
+  implicit libs: []
+  implicit dirs: [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib/thumb/v7-a+fp/hard;/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1;/home/czlimx/toolchain/arm-none-eabi/lib/gcc;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7a576/fast && /usr/bin/make -f CMakeFiles/cmTC_7a576.dir/build.make CMakeFiles/cmTC_7a576.dir/build
+make[1]: Entering directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7a576.dir/testCXXCompiler.cxx.obj
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++    -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access    -o CMakeFiles/cmTC_7a576.dir/testCXXCompiler.cxx.obj -c /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_7a576
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a576.dir/link.txt --verbose=1
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++  -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access   -march=armv7-a -marm -mtune=cortex-a15 --specs=nosys.specs -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections -Wl,--print-memory-usage   CMakeFiles/cmTC_7a576.dir/testCXXCompiler.cxx.obj  -o cmTC_7a576 
+/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+Memory region         Used Size  Region Size  %age Used
+make[1]: Leaving directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8bd85/fast && /usr/bin/make -f CMakeFiles/cmTC_8bd85.dir/build.make CMakeFiles/cmTC_8bd85.dir/build
+make[1]: Entering directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++    -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access    -v -o CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++
+Target: arm-none-eabi
+Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile
+Thread model: single
+Supported LTO compression algorithms: zlib
+gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) 
+COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/cc1plus -quiet -v -imultilib thumb/v7-a+fp/hard -iprefix /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/ -isysroot /home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard -mno-unaligned-access -mlibarch=armv7-a+fp -march=armv7-a+fp -auxbase-strip CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj -version -fdata-sections -ffunction-sections -fno-exceptions -fno-builtin -o /tmp/cckeOM4I.s
+GNU C++14 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)
+	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard"
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include"
+ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/local/include"
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include-fixed"
+ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"
+ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include
+End of search list.
+GNU C++14 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)
+	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: b20f86d509d185d6d42f26d50b8ff0e6
+COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/as -v -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -meabi=5 -o CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cckeOM4I.s
+GNU assembler version 2.36.1 (arm-none-eabi) using BFD version (GNU Arm Embedded Toolchain 10.3-2021.07) 2.36.1.20210621
+COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+Linking CXX executable cmTC_8bd85
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bd85.dir/link.txt --verbose=1
+/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++  -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access   -march=armv7-a -marm -mtune=cortex-a15 --specs=nosys.specs -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections -Wl,--print-memory-usage  -v CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_8bd85 
+Using built-in specs.
+Reading specs from /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/nosys.specs
+rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
+COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++
+COLLECT_LTO_WRAPPER=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper
+Target: arm-none-eabi
+Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile
+Thread model: single
+Supported LTO compression algorithms: zlib
+gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) 
+COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access'  '-marm' '-mtune=cortex-a15' '-specs=nosys.specs' '-nostartfiles' '-nodefaultlibs' '-nostdlib' '-v' '-o' 'cmTC_8bd85' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/collect2 -plugin /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/liblto_plugin.so -plugin-opt=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6bv63a.res --sysroot=/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -X -o cmTC_8bd85 -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1 -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib --gc-sections --print-memory-usage CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj
+/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000008000
+Memory region         Used Size  Region Size  %age Used
+COLLECT_GCC_OPTIONS='-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access'  '-marm' '-mtune=cortex-a15' '-specs=nosys.specs' '-nostartfiles' '-nodefaultlibs' '-nostdlib' '-v' '-o' 'cmTC_8bd85' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp'
+make[1]: Leaving directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1]
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard]
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward]
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include]
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed]
+    add: [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include]
+  end of search list found
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include/c++/10.3.1]
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard]
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include/c++/10.3.1/backward]
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include]
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include-fixed]
+  collapse include dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include]
+  implicit include dirs: [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include/c++/10.3.1;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include/c++/10.3.1/backward;/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include;/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include-fixed;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_8bd85/fast && /usr/bin/make -f CMakeFiles/cmTC_8bd85.dir/build.make CMakeFiles/cmTC_8bd85.dir/build]
+  ignore line: [make[1]: Entering directory '/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++    -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access    -v -o CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++]
+  ignore line: [Target: arm-none-eabi]
+  ignore line: [Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile]
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) ]
+  ignore line: [COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/cc1plus -quiet -v -imultilib thumb/v7-a+fp/hard -iprefix /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/ -isysroot /home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -D__USES_INITFINI__ /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard -mno-unaligned-access -mlibarch=armv7-a+fp -march=armv7-a+fp -auxbase-strip CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj -version -fdata-sections -ffunction-sections -fno-exceptions -fno-builtin -o /tmp/cckeOM4I.s]
+  ignore line: [GNU C++14 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard"]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include"]
+  ignore line: [ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/local/include"]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/include-fixed"]
+  ignore line: [ignoring duplicate directory "/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"]
+  ignore line: [ignoring nonexistent directory "/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/usr/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-a+fp/hard]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/include-fixed]
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (GNU Arm Embedded Toolchain 10.3-2021.07) version 10.3.1 20210621 (release) (arm-none-eabi)]
+  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: b20f86d509d185d6d42f26d50b8ff0e6]
+  ignore line: [COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  ignore line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/as -v -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -meabi=5 -o CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cckeOM4I.s]
+  ignore line: [GNU assembler version 2.36.1 (arm-none-eabi) using BFD version (GNU Arm Embedded Toolchain 10.3-2021.07) 2.36.1.20210621]
+  ignore line: [COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS= '-marm' '-mtune=cortex-a15' '-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access' '-v' '-o' 'CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  ignore line: [Linking CXX executable cmTC_8bd85]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bd85.dir/link.txt --verbose=1]
+  ignore line: [/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++  -march=armv7-a -marm -mtune=cortex-a15 -mfpu=vfpv3-d16 -mfloat-abi=hard  -fno-builtin -fdata-sections -ffunction-sections -fno-exceptions -nostdlib -fno-builtin -mno-unaligned-access   -march=armv7-a -marm -mtune=cortex-a15 --specs=nosys.specs -nostartfiles -nodefaultlibs -nostdlib -Wl --gc-sections -Wl --print-memory-usage  -v CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_8bd85 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/nosys.specs]
+  ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
+  ignore line: [COLLECT_GCC=/home/czlimx/toolchain/arm-none-eabi/bin/arm-none-eabi-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper]
+  ignore line: [Target: arm-none-eabi]
+  ignore line: [Configured with: /mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/src/gcc/configure --target=arm-none-eabi --prefix=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native --libexecdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/lib --infodir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/install-native/arm-none-eabi --build=x86_64-linux-gnu --host=x86_64-linux-gnu --with-gmp=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpfr=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-mpc=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-isl=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-libelf=/mnt/workspace/workspace/GCC-10-pipeline/jenkins-GCC-10-pipeline-260_20210727_1627371386/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Arm Embedded Toolchain 10.3-2021.07' --with-multilib-list=rmprofile,aprofile]
+  ignore line: [Thread model: single]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.3.1 20210621 (release) (GNU Arm Embedded Toolchain 10.3-2021.07) ]
+  ignore line: [COMPILER_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/:/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/:/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-mfpu=vfpv3-d16' '-mfloat-abi=hard' '-fdata-sections' '-ffunction-sections' '-fno-exceptions' '-nostdlib' '-fno-builtin' '-mno-unaligned-access'  '-marm' '-mtune=cortex-a15' '-specs=nosys.specs' '-nostartfiles' '-nodefaultlibs' '-nostdlib' '-v' '-o' 'cmTC_8bd85' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp']
+  link line: [ /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/collect2 -plugin /home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/liblto_plugin.so -plugin-opt=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6bv63a.res --sysroot=/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi -X -o cmTC_8bd85 -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1 -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc -L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib -L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib --gc-sections --print-memory-usage CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj]
+    arg [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc6bv63a.res] ==> ignore
+    arg [--sysroot=/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi] ==> ignore
+    arg [-X] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_8bd85] ==> ignore
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib]
+    arg [-L/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib] ==> dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib]
+    arg [--gc-sections] ==> ignore
+    arg [--print-memory-usage] ==> ignore
+    arg [CMakeFiles/cmTC_8bd85.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib/thumb/v7-a+fp/hard]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib/thumb/v7-a+fp/hard] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib/thumb/v7-a+fp/hard]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc] ==> [/home/czlimx/toolchain/arm-none-eabi/lib/gcc]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib]
+  collapse library dir [/home/czlimx/toolchain/arm-none-eabi/bin/../arm-none-eabi/lib] ==> [/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib]
+  implicit libs: []
+  implicit dirs: [/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-a+fp/hard;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib/thumb/v7-a+fp/hard;/home/czlimx/toolchain/arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1;/home/czlimx/toolchain/arm-none-eabi/lib/gcc;/home/czlimx/toolchain/arm-none-eabi/arm-none-eabi/lib]
+  implicit fwks: []
+
+
