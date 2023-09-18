@@ -1,9 +1,0 @@
-/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/rebuild_cache.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/edit_cache.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/CMakeFiles/trycode.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/device/am5718/CMakeFiles/rebuild_cache.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/device/am5718/CMakeFiles/edit_cache.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/arch/armv7-a/CMakeFiles/rebuild_cache.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/arch/armv7-a/CMakeFiles/edit_cache.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/driver/am57xx/CMakeFiles/rebuild_cache.dir
-/home/czlimx/codespace/baremetal_for_c/build/am5718/driver/am57xx/CMakeFiles/edit_cache.dir
