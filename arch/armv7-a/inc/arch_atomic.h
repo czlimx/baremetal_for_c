@@ -1,6 +1,8 @@
 #ifndef ARCH_ATOMIC_H_
 #define ARCH_ATOMIC_H_
 
+#include "arch_compiler.h"
+
 /**
  * @brief  Atomic set. 
  * @param  r0 - virtual address

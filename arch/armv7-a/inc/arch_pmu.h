@@ -1,6 +1,8 @@
 #ifndef ARCH_PMU_H_
 #define ARCH_PMU_H_
 
+#include "arch_compiler.h"
+
 /**
  * @brief  The enables User mode access to the Performance Monitors.
  */
