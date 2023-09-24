@@ -1,7 +1,8 @@
 MEMORY
 {   
-    SRAM(xrw)  : ORIGIN = 0x402F0400, LENGTH = 127K
-    DRAM(xrw)  : ORIGIN = 0x80000000, LENGTH = 512M
+    normal(xrw)   : ORIGIN = 0x82000000, LENGTH = 480M
+    shareable(rw) : ORIGIN = 0x81000000, LENGTH = 16M
+    page_table(x) : ORIGIN = 0x80000000, LENGTH = 16M
 }
 OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
@@ -13,46 +14,39 @@ SECTIONS
         *(.text.arch.vectors)
         *(.text.arch.startup)
         *(.text.arch.*)
-        *(.text.*)
+        *(.text.device.*)
+        *(.text.driver.*)
+        *(.text.tryrtos.*)
         *(.text*)
-        *(.glue*)
-        *(.vfp*)
-        *(.v4*)
-        *(*.iplt*)
-    } > DRAM
+    } > normal
 
     .rodata : {
         . = ALIGN(256);
         *(.rodata*)
-    } > DRAM
+    } > normal
 
     .data : {
         . = ALIGN(256);
         *(.data*)
-        *(.igot*)
-    } > DRAM
+    } > normal
 
     .bss (NOLOAD) : {
         . = ALIGN(256);
-        __bss_start__ = .;
+        _bss_start_ = .;
         *(.bss*)
         *(COMMON)
         . = ALIGN(256);
-        __bss_end__ = .;
-    } > DRAM
+        _bss_end_ = .;
+    } > normal
 
     .stack (NOLOAD) : {
         . = ALIGN(256);
-        __stack_start__ = .;
-        . = . + 0x1000;
-        __stack_abt_end__ = .;
-        . = . + 0x100000;
-        __stack_irq_end__ = .;
-        . = . + 0x100000;
-        __stack_svc_end__ = .;
-        . = . + 0x100000;
-        __stack_sys_end__ = .;
-        . = . + 0xA00000;
-        __stack_end__ = .;
-    } > DRAM
+        . = . + 0x4000;
+        _stack_end = .;
+    } > normal
+
+    .share : {
+        . = ALIGN(256);
+        *(.share*)
+    } > shareable
 }

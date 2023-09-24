@@ -7,10 +7,11 @@
     .set SCTLR_I,   12     // Instruction cache enable.
     .set SCTLR_Z,   11     // Branch prediction enable.
     .set SCTLR_C,    2     // Data and unified caches enable.
+    .set SCTLR_A,    1     // MMU enable.
     .set SCTLR_M,    0     // MMU enable.
     
     .extern _stack_top
-    .extern _early_init
+    .extern _early_arch_init
     .extern _vector_table
     .section .text.arch.startup, "ax", %progbits
     .arm
@@ -18,8 +19,8 @@
     .global do_reset, _start
 _start:
 do_reset:
-    /* enter svc mode and mask intrrupt */
-    cpsid if, #SVC_MODE
+    /* enter svc mode and mask intrrupt and async abort */
+    cpsid aif, #SVC_MODE
 
     /* set SCTLR.V = 0, Low exception vectors = VBAR */
     mrc p15, #0, r0, c1, c0, #0
@@ -48,13 +49,10 @@ do_reset:
     bic r0, r0, #(0x1U << SCTLR_C)
     mcr p15, #0, r0, c1, c0, #0
 
-    /* enable coprocessor access in CPACR */
-    ldr r0, = 0x00F00000
-	mcr p15, 0, r0, c1, c0, 2
-
-    /* enable FPU access so that VFP registers can be initialized */
-	ldr r0, = 0x40000000
-	vmsr fpexc, r0
+    /* disable Alignment check */
+    mrc p15, #0, r0, c1, c0, #0
+    bic r0, r0, #(0x1U << SCTLR_A)
+    mcr p15, #0, r0, c1, c0, #0
 
     /* setup stack for all mode */
     ldr r0, = _stack_end
@@ -73,7 +71,7 @@ do_reset:
     cps #SVC_MODE
 
     /* goto early init entry */
-    bl _early_init
+    bl _early_arch_init
 
 loop:
     b loop

@@ -17,10 +17,6 @@ SECTIONS
         *(.text.driver.*)
         *(.text.tryrtos.*)
         *(.text*)
-        *(.glue*)
-        *(.vfp*)
-        *(.v4*)
-        *(*.iplt*)
     } > dram
 
     .rodata : {
@@ -31,7 +27,6 @@ SECTIONS
     .data : {
         . = ALIGN(256);
         *(.data*)
-        *(.igot*)
     } > dram
 
     .bss (NOLOAD) : {

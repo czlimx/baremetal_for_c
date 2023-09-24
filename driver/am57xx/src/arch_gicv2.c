@@ -313,7 +313,7 @@ void arch_gicc_set_binary_point(uint32_t pointy)
 
 uint32_t arch_gicc_acknowledge(void)
 {
-    readl(GICC_IAR);
+    return readl(GICC_IAR);
 }
 
 void arch_gicc_end_of_interrupt(uint32_t cpuid, uint32_t number)

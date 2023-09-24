@@ -86,7 +86,7 @@ void drv_intc_handler(void)
 {
     /* get current penging interrupt */
     uint32_t ack = arch_gicc_acknowledge();
-    uint32_t cpu = (ack >> 10) & 0x7;
+    //uint32_t cpu = (ack >> 10) & 0x7;
     uint32_t irq = (ack >> 00) & 0x3FF;
 
     /* handler interrupt */

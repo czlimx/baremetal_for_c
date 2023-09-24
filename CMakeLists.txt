@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 
 # Set up the project
-project(trycode LANGUAGES C ASM CXX)
+project(trycode LANGUAGES C ASM)
 
 # clear not used warning
 if(DEFINED _initial_CMAKE_TOOLCHAIN_FILE
@@ -33,7 +33,7 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/arch/${RTOS_ARCH})
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/driver/${RTOS_CPU})
 
 # Pick up the board stuff
-#add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/example/${RTOS_BOARD}/${RTOS_KERNEL})
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/example/${RTOS_BOARD}/${RTOS_KERNEL})
 
 # Pick up the libc stuff
 #add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libc)

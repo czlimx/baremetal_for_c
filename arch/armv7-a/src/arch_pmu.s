@@ -1,5 +1,4 @@
-    .extern arch_pmu_irq_call_back
-    
+
     .global arch_pmu_user_access_enable
     .global arch_pmu_user_access_disable
     .global arch_pmu_cycle_counter_enable
@@ -8,6 +7,7 @@
     .global arch_pmu_cycle_counter_enable_irq
     .global arch_pmu_cycle_counter_disable_irq
     .global arch_pmu_cycle_counter_set_counter
+    .global arch_pmu_cycle_counter_get_counter
     .global arch_pmu_cycle_counter_delay
     .global arch_pmu_event_counter_enable
     .global arch_pmu_event_counter_disable
@@ -18,6 +18,7 @@
     .global arch_pmu_event_counter_enable_irq
     .global arch_pmu_event_counter_disable_irq
     .global arch_pmu_irq_handler
+    .weak   arch_pmu_irq_call_back
 
     .section .text.arch.pmu, "ax", %progbits
     .arm
@@ -71,10 +72,16 @@ arch_pmu_cycle_counter_init:
     orr r0, r0, #(1 << 2)
     mcr p15, 0, r0, c9, c12, 0
 
-    // PMCR[3] 64th Cycle count divider
+    // PMCR[3] 1th Cycle count divider
     mrc p15, 0, r0, c9, c12, 0
-    orr r0, r0, #(1 << 3)
+    bic r0, r0, #(1 << 3)
     mcr p15, 0, r0, c9, c12, 0
+
+    // PMCR[0] pmu enable
+    mrc p15, 0, r0, c9, c12, 0
+    orr r0, r0, #(1 << 0)
+    mcr p15, 0, r0, c9, c12, 0
+
     bx lr
 
 /**
@@ -108,19 +115,11 @@ arch_pmu_cycle_counter_set_counter:
     bx lr
 
 /**
- * @brief  The used the Cycle Counter delay.
- * @param  r0 - the tick value
+ * @brief  The get the Cycle Counter.
+ * @param  r0 - the counter value
  */
-arch_pmu_cycle_counter_delay:
-    // PMCR[2] Cycle counter reset.
-    mrc p15, 0, r1, c9, c12, 0
-    orr r1, r1, #(1 << 2)
-    mcr p15, 0, r1, c9, c12, 0
-1:
-    // read PMCCNTR Register.
-    mcr p15, 0, r1, c9, c13, 0
-    cmp r1, r0
-    blt 1b
+arch_pmu_cycle_counter_get_counter:
+    mrc p15, 0, r0, c9, c13, 0
     bx lr
 
 /**
@@ -226,8 +225,14 @@ arch_pmu_irq_handler:
     stmfd sp!, {lr}
     mrc p15, 0, r0, c9, c12, 3
     mcr p15, 0, r0, c9, c12, 3
-    bl arch_pmu_interrupt_call_back
+    bl arch_pmu_irq_call_back
     ldmfd sp!, {lr}
+    bx lr
+
+/**
+ * @brief  The call back function for the Performance Monitors interrupt.
+ */
+arch_pmu_irq_call_back:
     bx lr
 
     .end

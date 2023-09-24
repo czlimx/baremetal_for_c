@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "arch_exception.C": "cpp",
+        "arch_compiler.h": "c",
+        "arch_mmu.C": "cpp",
+        "arch_irq.h": "c"
+    }
+}

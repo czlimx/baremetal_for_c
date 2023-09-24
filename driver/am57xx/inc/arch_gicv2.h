@@ -2,7 +2,7 @@
 #define ARCH_GICV2_H_
 
 #include "arch_compiler.h"
-#include "device_memory.h"
+#include "device_info.h"
 
 #define GICD_OFFSET         0x1000
 #define GICC_OFFSET         0x2000

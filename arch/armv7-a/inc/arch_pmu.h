@@ -45,10 +45,10 @@ void arch_pmu_cycle_counter_disable_irq(void);
 void arch_pmu_cycle_counter_set_counter(uint32_t count);
 
 /**
- * @brief  The used the Cycle Counter delay.
- * @param  tick - the tick value
+ * @brief  The set the Cycle Counter.
+ * @param  count - the counter value
  */
-void arch_pmu_cycle_counter_delay(uint32_t tick);
+uint32_t arch_pmu_cycle_counter_get_counter(void);
 
 /**
  * @brief  The enable the Event Counter.
@@ -102,7 +102,7 @@ void arch_pmu_event_counter_disable_irq(void);
 /**
  * @brief  The IRQ handler for the Performance Monitors.
  */
-void arch_pmu_irq_handler(void);
+void arch_pmu_irq_handler(void *para);
 
 /**
  * @brief  The call back function for the Performance Monitors interrupt.
