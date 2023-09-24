@@ -1,8 +1,8 @@
 MEMORY
 {   
-    normal(xrw)   : ORIGIN = 0x82000000, LENGTH = 480M
-    shareable(rw) : ORIGIN = 0x81000000, LENGTH = 16M
-    page_table(x) : ORIGIN = 0x80000000, LENGTH = 16M
+    normal(xrw)   : ORIGIN = 0xC2000000, LENGTH = 480M
+    shareable(rw) : ORIGIN = 0xC1000000, LENGTH = 16M
+    page_table(x) : ORIGIN = 0xC0000000, LENGTH = 16M
 }
 OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
