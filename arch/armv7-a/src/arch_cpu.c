@@ -1,14 +1,8 @@
-#include "arch_branch_predictor.h"
-#include "arch_cache.h"
-#include "arch_fpu.h"
-#include "arch_exception.h"
-#include "arch_cpsr.h"
 #include "arch_pmu.h"
-#include "arch_irq.h"
 #include "device_info.h"
-#include "early_init.h"
-#include "arch_mmu.h"
-#include "arch_tlb.h"
+#include <stdio.h>
+
+static uint64_t arch_cur_tick = 0;
 
 /**
  * @brief  The get the MPIDR register.
@@ -65,43 +59,10 @@ void arch_udelay(uint32_t udelay)
 }
 
 /**
- * @brief  The early init for CPU.
+ * @brief  The update current system tick.
  */
-void _early_arch_init(void)
+void arch_update_tick(void)
 {
-    /* invalidate all tlb */
-    arch_tlb_invalidate_all();
-
-    /* enable MMU */
-    early_mmu_config();
-    arch_mmu_enable();
-
-    /* enable Dcache */
-    arch_dcache_invalidate_all();
-    arch_dcache_enable();
-
-    /* enable Icache */
-    arch_icache_invalidate_all();
-    arch_icache_enable();
-
-    /* enable branch predictor */
-    arch_branch_predictor_invalidate_all();
-    arch_branch_predictor_enable();
-
-    /* enable alignment check */
-    arch_alignment_check_enable();
-
-    /* enable async abort */
-    arch_cpsr_async_abort_enable();
-
-    /* enbale irq */
-    arch_irq_init();
-
-    /* enable pmu */
-    arch_pmu_user_access_enable();
-    arch_pmu_cycle_counter_init();
-    arch_pmu_cycle_counter_enable();
-
-    /* enable FPU */
-    arch_fpu_enable();
+    arch_cur_tick++;
+    //printf("%ld\r\n", arch_cur_tick);
 }

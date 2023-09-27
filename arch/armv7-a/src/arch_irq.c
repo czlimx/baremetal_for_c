@@ -1,5 +1,5 @@
 #include "arch_irq.h"
-#include "drv_intc.h"
+#include "sdrv_intc.h"
 #include "arch_cpsr.h"
 
 /**

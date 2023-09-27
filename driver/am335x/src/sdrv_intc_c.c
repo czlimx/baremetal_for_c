@@ -1,4 +1,4 @@
-#include "drv_intc.h"
+#include "sdrv_intc.h"
 
 /**
  * @brief init for IRQ.

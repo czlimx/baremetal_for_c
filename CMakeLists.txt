@@ -20,6 +20,9 @@ add_link_options(-T${CMAKE_CURRENT_LIST_DIR}/example/${RTOS_BOARD}/linker.lds -W
 # Define our target
 add_executable(${PROJECT_NAME})
 
+# Pick up the libc stuff
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libc)
+
 # Pick up the board stuff
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/device/${RTOS_BOARD})
 
@@ -34,9 +37,6 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/driver/${RTOS_CPU})
 
 # Pick up the board stuff
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/example/${RTOS_BOARD}/${RTOS_KERNEL})
-
-# Pick up the libc stuff
-#add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/libc)
 
 # post build command
 add_custom_command(

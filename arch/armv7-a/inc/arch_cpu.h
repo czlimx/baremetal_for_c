@@ -21,8 +21,8 @@ uint32_t arch_cpu_get_mpidr(void);
 void arch_udelay(uint32_t udelay);
 
 /**
- * @brief  The early init for CPU.
+ * @brief  The update current system tick.
  */
-void _early_arch_init(void);
+void arch_update_tick(void);
 
 #endif /* ARCH_CPU_H_ */

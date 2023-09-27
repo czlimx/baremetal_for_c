@@ -1,4 +1,4 @@
-#include "drv_intc.h"
+#include "sdrv_intc.h"
 
     .global drv_irq_handler
 

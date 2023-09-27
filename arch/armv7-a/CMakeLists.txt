@@ -7,6 +7,7 @@ target_sources(${PROJECT_NAME}
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_cpu.c
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_exception.s
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_fpu.s
+    ${CMAKE_CURRENT_LIST_DIR}/src/arch_init.c
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_irq.c
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_mmu.s
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_tlb.s

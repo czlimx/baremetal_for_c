@@ -4,8 +4,13 @@
 #include "arch_compiler.h"
 
 /**
- * @brief  The early init for CPU.
+ * @brief  The early init for board.
  */
-void early_mmu_config(void);
+void board_early_init(void);
+
+/**
+ * @brief  The init for board.
+ */
+void board_init(void);
 
 #endif /* EXAMPLE_EARLAY_INIT_H_ */

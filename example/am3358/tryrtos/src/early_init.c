@@ -1,8 +1,50 @@
 #include "arch_tlb.h"
 #include "arch_mmu.h"
 #include "arch_compiler.h"
+#include "sdrv_uart.h"
+#include "sdrv_intc.h"
+#include "sdrv_timer.h"
+#include "arch_cpu.h"
+#include "arch_irq.h"
+#include <stdio.h>
 
-void early_mmu_config(void)
+#if defined(__GNUC__) && !defined(__clang__)
+    #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+    #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif
+
+/**
+ * @brief  retargets the c library printf function to the usart.
+ * @param  none
+ * @retval none
+ */
+PUTCHAR_PROTOTYPE 
+{
+    sdrv_uart_send(UART_0_BASE, ch);
+    return ch;
+}
+
+int _write(int fd, char *pBuffer, int size)
+{
+    (void)fd;
+    for (int i = 0; i < size; i++)
+        __io_putchar(*pBuffer++);
+    return size;
+}
+
+const sdrv_uart_config_type default_uart = {
+    .dma_enable     = false,
+    .fifo_enable    = true,
+    .rx_fifo_level  = UART_FIFO_LEVEL_8,
+    .tx_fifo_level  = UART_FIFO_LEVEL_36,
+    .baudrate       = 115200U,
+    .parity         = UART_PARITY_NO,
+    .stopbits       = UART_STOPBITS_ONE_BITS,
+    .wordlength     = UART_WORDLENGTH_8_BITS
+};
+
+static void early_mmu_config(void)
 {
     /* default 0x80000000 with short-descriptor format table */
     arch_tlb_config_ttbr0(0x80000000);
@@ -77,5 +119,62 @@ void early_mmu_config(void)
         }
         page_base[i] = (pa_frame  & 0xFFFFF000) | attribute;
         pa_frame += 0x1000;                 // 4KB
+    }
+}
+
+void board_early_init(void)
+{
+    /* configure mmu page table */
+    early_mmu_config();
+}
+
+void sdrv_timer_intc_handler(void* para)
+{
+    arch_update_tick();
+    sdrv_dtimer_int_status_clear(DTIMER2_BASE, TIMER_INTERRUPT_OVF);
+    (void)para;
+}
+
+static void sdrv_timer_init(uint32_t base)
+{
+    /* Select the master osc CLK_32KHZ as Timer2 clock source */
+    writel(0x2, 0x44E00508);
+
+    /* Reset the counter */
+    sdrv_dtimer_soft_reset(base);
+
+    /* Load the counter with the initial count value with 1ms */
+    sdrv_dtimer_counter_set(base, 0xffffff00);
+
+    /* Load the load register with the reload count value with 1ms */
+    sdrv_dtimer_reload_set(base, 0xffffff00);
+
+    /* Configure the DMTimer for Auto-reload and compare mode */
+    sdrv_dtimer_mode_configure(base, TIMER_TRIGGER_RELOAD);
+
+    /* Enable the DMTimer interrupts */
+    sdrv_dtimer_int_enable(base, TIMER_INTERRUPT_OVF);
+
+    /* Enable the DMTimer2 INTC */
+    arch_irq_register(AM335X_INT_TINT2, 15, NULL, sdrv_timer_intc_handler);
+
+    /* enable the timer2 */
+    sdrv_dtimer_enable(base);
+}
+
+void board_init(void)
+{
+    /* configure and init uart */
+    sdrv_uart_init(UART_0_BASE, &default_uart);
+
+    /* configure timer for 1ms tick */
+    sdrv_timer_init(DTIMER2_BASE);
+
+    /* test print to log */
+    printf("\r\nboard init success!!!\r\n");
+
+    for (;;)
+    {
+        //printf("B\r\n");
     }
 }
