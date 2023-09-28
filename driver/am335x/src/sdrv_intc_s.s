@@ -1,14 +1,14 @@
 #include "sdrv_intc.h"
 
-    .global drv_irq_handler
+    .global sdrv_irq_handler
 
     .section .text.drv.irq, "ax", %progbits
     .arm
 
-drv_irq_handler:
+sdrv_irq_handler:
     /* save spsr to r11, atpcs is 0~3*/
     mrs r11, spsr
-    
+
     /* read current interrupt threshold */
     ldr r0, =INTCPS_BASE + INTC_THRESHOLD
     ldr r12, [r0]
@@ -18,7 +18,7 @@ drv_irq_handler:
     ldr r2, [r1]
     and r2, r2, #0x3F
     str r2, [r0]
-    
+
     /* get current IRQ number */
     ldr r1, =INTCPS_BASE + INTC_SIR_IRQ
     ldr r0, [r1]
@@ -58,7 +58,7 @@ drv_irq_handler:
 
     /* Restore spsr */
     msr spsr_cxsf, r11
-    
+
     /* return back */
     bx lr
 

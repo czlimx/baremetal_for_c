@@ -15,7 +15,7 @@ endif()
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/${RTOS_BOARD}/${RTOS_KERNEL})
 
 # Define our target library and an alias for consumers
-add_link_options(-T${CMAKE_CURRENT_LIST_DIR}/example/${RTOS_BOARD}/linker.lds -Wl,-Map=${EXECUTABLE_OUTPUT_PATH}/${PROJECT_NAME}.map,--cref)
+add_link_options(-T${CMAKE_CURRENT_LIST_DIR}/board/${RTOS_BOARD}/linker.lds -Wl,-Map=${EXECUTABLE_OUTPUT_PATH}/${PROJECT_NAME}.map,--cref)
 
 # Define our target
 add_executable(${PROJECT_NAME})
@@ -36,7 +36,7 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/arch/${RTOS_ARCH})
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/driver/${RTOS_CPU})
 
 # Pick up the board stuff
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/example/${RTOS_BOARD}/${RTOS_KERNEL})
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/board/${RTOS_BOARD}/${RTOS_KERNEL})
 
 # post build command
 add_custom_command(

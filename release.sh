@@ -5,7 +5,7 @@ if [ $# != 2 ];then
 fi
 
 case $1 in
-    "am3358" | "am5718" )
+    "am3358" | "am5718" | "e3640" )
             echo -e "\033[32m Start to compile the $1 board, please wait patiently. \033[0m"
             cmake -B build/$1 -DRTOS_KERNEL=$2 -DRTOS_BOARD=$1 -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=./cmake/$1.cmake -G "Unix Makefiles" -S .
             make -C build/$1 --no-print-directory

@@ -14,7 +14,7 @@ arch_mpu_enable:
     mrc p15, 0, r0, c1, c0, 0
     orr r0, r0, #(1 << 0)           // MPU enable.
     orr r0, r0, #(1 << 17)          // MPU background region enable.
-    mcr p15, 0, r0, c1, c0, 0       
+    mcr p15, 0, r0, c1, c0, 0
     bx lr
 
 /**
@@ -24,7 +24,7 @@ arch_mpu_disable:
     mrc p15, 0, r0, c1, c0, 0
     bic r0, r0, #(1 << 0)           // MPU enable.
     bic r0, r0, #(1 << 17)          // MPU background region enable.
-    mcr p15, 0, r0, c1, c0, 0       
+    mcr p15, 0, r0, c1, c0, 0
     bx lr
 
 /**
@@ -41,9 +41,9 @@ arch_mpu_reset:
     mov r2, #0
 1:
     mcr p15, 0, r2, c6, c2, 0
-    mcr p15, 0, r3, c6, c2, 2
+    mcr p15, 0, r3, c6, c1, 2
     add r2, r2, #1
-    cmp r1, r2
+    cmp r2, r1
     blo 1b
     bx lr
 
@@ -56,11 +56,13 @@ arch_mpu_reset:
  */
 arch_mpu_add_region:
     mcr p15, 0, r0, c6, c2, 0
-    and r1, r1, #0xFFFFFFE0
+    sub r4, r3, #1
+    mvn r4, r4
+    and r1, r1, r4
     mcr p15, 0, r1, c6, c1, 0
     mcr p15, 0, r2, c6, c1, 4
     clz r3, r3
-    add r3, r3, #1
+    add r3, r3, #2
     mov r3, r3, lsl #1
     orr r3, r3, #(1 << 0)
     mcr p15, 0, r3, c6, c1, 2

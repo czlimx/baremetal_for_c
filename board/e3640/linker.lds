@@ -1,17 +1,23 @@
 MEMORY
-{   
-    normal(xrw)   : ORIGIN = 0xC2000000, LENGTH = 480M
-    shareable(rw) : ORIGIN = 0xC1000000, LENGTH = 16M
-    page_table(x) : ORIGIN = 0xC0000000, LENGTH = 16M
+{
+    normal(xrw)   : ORIGIN = 0x00404000, LENGTH = 3M
+    tcm(xrw)      : ORIGIN = 0x00000100, LENGTH = 64K
 }
 OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
 ENTRY(_start)
 SECTIONS
 {
+    .vectors : {
+        . = ALIGN(256);
+        _vectors_start_ = .;
+        KEEP(*(.text.arch.vectors))
+        . = ALIGN(256);
+        _vectors_end_ = .;
+    } > normal
+
     .text : {
         . = ALIGN(256);
-        *(.text.arch.vectors)
         *(.text.arch.startup)
         *(.text.arch.*)
         *(.text.device.*)
@@ -43,18 +49,10 @@ SECTIONS
         . = ALIGN(256);
         . = . + 0x4000;
         _stack_end = .;
-    } > normal
+    } > tcm
 
-    .heap (COPY):
-    {
-        __end__ = .;
-        PROVIDE(end = .);
-        *(.heap*)
-        __HeapLimit = .;
-    } > normal
-
-    .share : {
+    .share (NOLOAD) : {
         . = ALIGN(256);
         *(.share*)
-    } > shareable
+    } > tcm
 }

@@ -3,12 +3,11 @@
 	.set IRQ_MODE,	0x12
     .set ABT_MODE,	0x17
 
-    .set SCTLR_V,   13     // Vectors bit.
     .set SCTLR_I,   12     // Instruction cache enable.
     .set SCTLR_Z,   11     // Branch prediction enable.
     .set SCTLR_C,    2     // Data and unified caches enable.
     .set SCTLR_A,    1     // Align check enable.
-    .set SCTLR_M,    0     // MMU enable.
+    .set SCTLR_M,    0     // MPU enable.
 
     .extern _stack_top
     .extern _early_arch_init
@@ -22,14 +21,7 @@ do_reset:
     /* enter svc mode and mask intrrupt and async abort */
     cpsid aif, #SVC_MODE
 
-    /* set SCTLR.V = 0, Low exception vectors = VBAR */
-    mrc p15, #0, r0, c1, c0, #0
-    bic r0, r0, #(0x1U << SCTLR_V)
-    mcr p15, #0, r0, c1, c0, #0
-    ldr r0, = _vector_table
-    mcr p15, #0, r0, c12,c0, #0
-
-    /* disable mmu */
+    /* disable MPU */
     mrc p15, #0, r0, c1, c0, #0
     bic r0, r0, #(0x1U << SCTLR_M)
     mcr p15, #0, r0, c1, c0, #0
@@ -68,6 +60,10 @@ do_reset:
     sub r0, r0, #0x1000
     mov sp, r0
     cps #SVC_MODE
+
+    /* remap tcm base before use stack */
+    ldr r0, = 0x0
+    bl arch_tcm_remap
 
     /* goto early init entry */
     bl _early_arch_init

@@ -7,6 +7,7 @@
         "printf.h": "c",
         "mini_memset.h": "c",
         "arch_pmu.h": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "arch_mmu.h": "c"
     }
 }

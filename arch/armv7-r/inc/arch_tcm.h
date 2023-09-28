@@ -4,19 +4,11 @@
 #include "arch_compiler.h"
 
 /**
- * @brief  The remap the ATCM.
+ * @brief  The remap the TCM.
  * @param  base - the base address.
  *
  * @note   The base address must be aligned to the size of the TCM.
  */
-void arch_tcma_remap(uint32_t base);
-
-/**
- * @brief  The remap the BTCM.
- * @param  base - the base address.
- *
- * @note   The base address must be aligned to the size of the TCM.
- */
-void arch_tcmb_remap(uint32_t base);
+void arch_tcm_remap(uint32_t base);
 
 #endif /* ARCH_TCM_H_ */

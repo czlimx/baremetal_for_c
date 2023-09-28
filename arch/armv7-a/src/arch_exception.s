@@ -27,7 +27,7 @@ do_irq:
     /* save general register */
     stmfd sp!, {r0-r12, lr}
 
-    bl drv_irq_handler
+    bl sdrv_irq_handler
 
     /* restore general register */
     ldmfd sp!, {r0-r12, pc}^

@@ -6,7 +6,7 @@
 #include "arch_pmu.h"
 #include "arch_irq.h"
 #include "device_info.h"
-#include "early_init.h"
+#include "board_init.h"
 #include "arch_mmu.h"
 #include "arch_tlb.h"
 #include "string.h"
