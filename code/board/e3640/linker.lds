@@ -50,9 +50,4 @@ SECTIONS
         . = . + 0x4000;
         _stack_end = .;
     } > tcm
-
-    .share (NOLOAD) : {
-        . = ALIGN(256);
-        *(.share*)
-    } > tcm
 }
