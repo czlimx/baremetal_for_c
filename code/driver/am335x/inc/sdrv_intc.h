@@ -171,6 +171,11 @@ void sdrv_irq_clear_status(uint32_t irq);
  */
 void sdrv_irq_trigger(uint32_t irq);
 
+/**
+ * @brief trigger IRQ number.
+ */
+void sdrv_irq_handler(void);
+
 #endif /* ASSEMBLY */
 
 #endif /* DRIVER_INTC_H_ */

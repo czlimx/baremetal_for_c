@@ -1,4 +1,5 @@
 # Toolchain settings
+set(COMPILE_DIRECTORY   /home/czlimx/toolchain/arm-none-eabi)
 set(CROSS_COMPILE       arm-none-eabi-)
 set(CMAKE_C_COMPILER    ${CROSS_COMPILE}gcc)
 set(CMAKE_CXX_COMPILER  ${CROSS_COMPILE}g++)
@@ -17,7 +18,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE NEVER)
 set(CMAKE_C_FLAGS   "${MPU_FLAGS} ${VFP_FLAGS} ${COM_FLAGS} ${GCC_FLAGS}" CACHE INTERNAL "c compiler flags")
 set(CMAKE_CXX_FLAGS "${MPU_FLAGS} ${VFP_FLAGS} ${COM_FLAGS} ${GCC_FLAGS}" CACHE INTERNAL "cxx compiler flags")
 set(CMAKE_ASM_FLAGS "${MPU_FLAGS} ${VFP_FLAGS} ${COM_FLAGS} ${ASM_FLAGS}" CACHE INTERNAL "asm compiler flags")
-set(CMAKE_EXE_LINKER_FLAGS "${MPU_FLAGS} ${SPE_FLAGS} ${LDD_FLAGS} -Wl,--print-memory-usage ${CMAKE_LINK_FLAGS}" CACHE INTERNAL "exe link flags")
+set(CMAKE_EXE_LINKER_FLAGS "${MPU_FLAGS} ${SPE_FLAGS} ${LDD_FLAGS} ${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -Wl,--print-memory-usage ${CMAKE_LINK_FLAGS}" CACHE INTERNAL "exe link flags")
 
 SET(CMAKE_C_FLAGS_DEBUG "-Og -g -gdwarf-2" CACHE INTERNAL "c debug compiler flags")
 SET(CMAKE_CXX_FLAGS_DEBUG "-Og -g -gdwarf-2" CACHE INTERNAL "c debug compiler flags")

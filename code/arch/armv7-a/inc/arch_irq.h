@@ -3,6 +3,8 @@
 
 #include "arch_compiler.h"
 
+#define ARCH_IRQ_MAX_PRIORITY           16
+
 /**
  * @brief Define interrupt call back Type. 
  */

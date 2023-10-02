@@ -1,6 +1,7 @@
     .global do_prefetch_abort
     .global do_data_abort
     .global do_irq
+    .extern sdrv_irq_handler
 
     .section .text.arch.exception, "ax", %progbits
     .arm
@@ -27,6 +28,7 @@ do_irq:
     /* save general register */
     stmfd sp!, {r0-r12, lr}
 
+    /* handling interrupt exceptions */
     bl sdrv_irq_handler
 
     /* restore general register */

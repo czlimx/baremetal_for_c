@@ -57,5 +57,4 @@ void arch_tlb_invalidate_instruction_asid(uint32_t asid);
  */
 void arch_tlb_invalidate_instruction_page(uint32_t page);
 
-
 #endif /* ARCH_TLB_H_ */

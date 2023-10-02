@@ -1,36 +1,19 @@
 #include "arch_tlb.h"
-#include "arch_mmu.h"
-#include "arch_compiler.h"
 #include "sdrv_uart.h"
 #include "sdrv_intc.h"
 #include "sdrv_timer.h"
-#include "arch_cpu.h"
 #include "arch_irq.h"
-#include <stdio.h>
-
-#if defined(__GNUC__) && !defined(__clang__)
-    #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-#else
-    #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-#endif
+#include "libc_printf.h"
+#include "board_init.h"
 
 /**
- * @brief  retargets the c library printf function to the usart.
- * @param  none
- * @retval none
+ * Output a character to a custom device like UART, used by the printf() function
+ * This function is declared here only. You have to write your custom implementation somewhere
+ * \param character Character to output
  */
-PUTCHAR_PROTOTYPE 
+void _putchar(char character)
 {
-    sdrv_uart_send(UART_0_BASE, ch);
-    return ch;
-}
-
-int _write(int fd, char *pBuffer, int size)
-{
-    (void)fd;
-    for (int i = 0; i < size; i++)
-        __io_putchar(*pBuffer++);
-    return size;
+    sdrv_uart_send(UART_0_BASE, character);
 }
 
 const sdrv_uart_config_type default_uart = {
@@ -44,6 +27,9 @@ const sdrv_uart_config_type default_uart = {
     .wordlength     = UART_WORDLENGTH_8_BITS
 };
 
+/**
+ * @brief  The early page table init for mmu.
+ */
 static void early_mmu_config(void)
 {
     /* default 0x80000000 with short-descriptor format table */
@@ -122,20 +108,19 @@ static void early_mmu_config(void)
     }
 }
 
+/**
+ * @brief  The early init for board.
+ */
 void board_early_init(void)
 {
     /* configure mmu page table */
     early_mmu_config();
 }
 
-void sdrv_timer_intc_handler(void* para)
-{
-    arch_update_tick();
-    sdrv_dtimer_int_status_clear(DTIMER2_BASE, TIMER_INTERRUPT_OVF);
-    (void)para;
-}
-
-static void sdrv_timer_init(uint32_t base)
+/**
+ * @brief  The early init for timer.
+ */
+void sdrv_timer_init(uint32_t base)
 {
     /* Select the master osc CLK_32KHZ as Timer2 clock source */
     writel(0x2, 0x44E00508);
@@ -156,25 +141,20 @@ static void sdrv_timer_init(uint32_t base)
     sdrv_dtimer_int_enable(base, TIMER_INTERRUPT_OVF);
 
     /* Enable the DMTimer2 INTC */
-    arch_irq_register(AM335X_INT_TINT2, 15, NULL, sdrv_timer_intc_handler);
+    arch_irq_register(AM335X_INT_TINT2, ARCH_IRQ_MAX_PRIORITY - 1, NULL, sdrv_timer_intc_handler);
 
     /* enable the timer2 */
     sdrv_dtimer_enable(base);
 }
 
+/**
+ * @brief  The init for board.
+ */
 void board_init(void)
 {
     /* configure and init uart */
     sdrv_uart_init(UART_0_BASE, &default_uart);
 
-    /* configure timer for 1ms tick */
-    sdrv_timer_init(DTIMER2_BASE);
-
     /* test print to log */
-    printf("\r\nboard init success!!!\r\n");
-
-    for (;;)
-    {
-        //printf("B\r\n");
-    }
+    printf("\r\nhello, the board started successfully!!!\r\n");
 }

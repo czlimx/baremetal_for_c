@@ -1,11 +1,3 @@
-// @ #define CONTEXTIDR          CP15_REG(c13, 0, c0, 1)    /*! Context ID Register | 上下文ID寄存器*/	
-// @ #define TPIDRURW            CP15_REG(c13, 0, c0, 2)    /*! User Read/Write Thread ID Register | 用户读/写线程ID寄存器*/	
-// @ #define TPIDRURO            CP15_REG(c13, 0, c0, 3)    /*! User Read-Only Thread ID Register | 用户只读写线程ID寄存器*/	
-// @  // ASID 
-// @ MRC p15, 0, <Rt>, c13, c0, 1    ; Read CONTEXTIDR into Rt
-// @ MCR p15, 0, <Rt>, c13, c0, 1    ; Write Rt to CONTEXTIDR
-
-
     .global arch_mmu_enable
     .global arch_mmu_disable
 

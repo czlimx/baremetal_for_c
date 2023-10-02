@@ -6,4 +6,9 @@
  */
 void _early_arch_init(void);
 
+/**
+ * @brief  The Main functional logic processing interface.
+ */
+int main(void);
+
 #endif /* ARCH_INIT_H_ */

@@ -1,16 +1,16 @@
 #include "arch_branch_predictor.h"
 #include "arch_cache.h"
 #include "arch_fpu.h"
-#include "arch_exception.h"
 #include "arch_cpsr.h"
 #include "arch_pmu.h"
 #include "arch_irq.h"
-#include "device_info.h"
-#include "board_init.h"
 #include "arch_mmu.h"
 #include "arch_tlb.h"
-#include "string.h"
 #include "arch_cpu.h"
+#include "arch_init.h"
+#include "libc_memory.h"
+#include "board_config.h"
+#include "board_init.h"
 
 extern uint32_t _bss_start_[], _bss_end_[];
 
@@ -49,7 +49,7 @@ void _early_arch_init(void)
     /* enable async abort */
     arch_cpsr_async_abort_enable();
 
-    /* enbale irq */
+    /* init irq */
     arch_irq_init();
 
     /* enable pmu */
@@ -62,4 +62,7 @@ void _early_arch_init(void)
 
     /* init for board */
     board_init();
+
+    /* goto main */
+    (void)main();
 }

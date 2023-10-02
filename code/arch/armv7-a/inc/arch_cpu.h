@@ -16,13 +16,8 @@ uint32_t arch_cpu_get_mpidr(void);
 
 /**
  * @brief  The used the Cycle Counter delay.
- * @param  udelay - the udelay value
- */
-void arch_udelay(uint32_t udelay);
-
-/**
- * @brief  The update current system tick.
- */
-void arch_update_tick(void);
+ * @param  tick - the udelay to tick value
+ */ 
+void arch_tick_delay(uint32_t tick);
 
 #endif /* ARCH_CPU_H_ */

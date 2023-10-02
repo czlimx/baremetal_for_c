@@ -2,7 +2,7 @@
 
     .global sdrv_irq_handler
 
-    .section .text.drv.irq, "ax", %progbits
+    .section .text.sdrv.irq, "ax", %progbits
     .arm
 
 sdrv_irq_handler:

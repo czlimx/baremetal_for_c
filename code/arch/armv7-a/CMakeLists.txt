@@ -4,6 +4,7 @@ target_sources(${PROJECT_NAME}
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_atomic.s
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_branch_predictor.s
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_cache.s
+    ${CMAKE_CURRENT_LIST_DIR}/src/arch_context.s
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_cpu.c
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_exception.s
     ${CMAKE_CURRENT_LIST_DIR}/src/arch_fpu.s

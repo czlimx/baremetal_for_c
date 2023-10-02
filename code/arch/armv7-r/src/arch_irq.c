@@ -50,9 +50,6 @@ void arch_irq_init(void)
 
     /* enable INTC module */
     sdrv_irq_init();
-
-    /* enbale IRQ and Async abort */
-    arch_cpsr_irq_enable();
 }
 
 /**
@@ -63,18 +60,18 @@ void arch_irq_register(uint32_t irq, uint32_t priority, void *para, irq_handler_
     if (handler == NULL)
         return;
 
-    if (priority > 15)
+    if (priority > (ARCH_IRQ_MAX_PRIORITY - 1))
         return;
+
+    /* update interrupt handler */
+    arch_irq_handler_array[irq].para = para;
+    arch_irq_handler_array[irq].handler = handler;
 
     /* config priority for IRQ */
     sdrv_irq_set_priority(irq, priority);
 
     /* enable IRQ number */
     sdrv_irq_enable(irq);
-
-    /* update interrupt handler */
-    arch_irq_handler_array[irq].para = para;
-    arch_irq_handler_array[irq].handler = handler;
 }
 
 /**

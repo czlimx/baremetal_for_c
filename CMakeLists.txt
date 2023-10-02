@@ -20,17 +20,18 @@ add_link_options(-T${CMAKE_CURRENT_LIST_DIR}/code/board/${RTOS_BOARD}/linker.lds
 # Define our target
 add_executable(${PROJECT_NAME})
 
+# add link static library for our target
+link_directories(${COMPILE_DIRECTORY}/lib)
+target_link_libraries(${PROJECT_NAME} -lgcc)
+
 # Pick up the libc stuff
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/libc)
-
-# Pick up the board stuff
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/device/${RTOS_BOARD})
 
 # Pick up the port specific variables and apply them
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/arch/${RTOS_ARCH})
 
 # Pick up the kernel stuff
-#add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/tryrtos/${RTOS_KERNEL})
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/kernel/${RTOS_KERNEL})
 
 # Pick up the driver stuff
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/driver/${RTOS_CPU})

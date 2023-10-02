@@ -45,14 +45,6 @@ SECTIONS
         _stack_end = .;
     } > normal
 
-    .heap (COPY):
-    {
-        __end__ = .;
-        PROVIDE(end = .);
-        *(.heap*)
-        __HeapLimit = .;
-    } > normal
-
     .share : {
         . = ALIGN(256);
         *(.share*)
