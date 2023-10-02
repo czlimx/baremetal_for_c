@@ -20,8 +20,8 @@ set(CMAKE_CXX_FLAGS "${MPU_FLAGS} ${VFP_FLAGS} ${COM_FLAGS} ${GCC_FLAGS}" CACHE 
 set(CMAKE_ASM_FLAGS "${MPU_FLAGS} ${VFP_FLAGS} ${COM_FLAGS} ${ASM_FLAGS}" CACHE INTERNAL "asm compiler flags")
 set(CMAKE_EXE_LINKER_FLAGS "${MPU_FLAGS} ${SPE_FLAGS} ${LDD_FLAGS} ${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -Wl,--print-memory-usage ${CMAKE_LINK_FLAGS}" CACHE INTERNAL "exe link flags")
 
-SET(CMAKE_C_FLAGS_DEBUG "-Og -g -gdwarf-2" CACHE INTERNAL "c debug compiler flags")
-SET(CMAKE_CXX_FLAGS_DEBUG "-Og -g -gdwarf-2" CACHE INTERNAL "c debug compiler flags")
+SET(CMAKE_C_FLAGS_DEBUG "-O0 -g -gdwarf-2" CACHE INTERNAL "c debug compiler flags")
+SET(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -gdwarf-2" CACHE INTERNAL "c debug compiler flags")
 SET(CMAKE_ASM_FLAGS_DEBUG "-g -gdwarf-2" CACHE INTERNAL "asm debug compiler flags")
 
 SET(CMAKE_C_FLAGS_RELEASE "-O3" CACHE INTERNAL "c release compiler flags")

@@ -243,7 +243,7 @@ Data.Set NSD:0x4C000008 %LE %Long 0x61C05332    ; SDRAM_CONFIG
 
 ; --------------------------------------------------------------------------------
 ; Load the application
-Data.LOAD.Elf "&DEMO_SCRIPT_DIR/../../bin/am3358/tryrtos/trycode" /PATH \\wsl.localhost\Ubuntu
+Data.LOAD.Elf "&DEMO_SCRIPT_DIR/../../bin/am3358/tryrtos/trycode" /LOADSEC !.bss /PATH \\wsl.localhost\Ubuntu
 
 ; --------------------------------------------------------------------------------
 ; Open some windows

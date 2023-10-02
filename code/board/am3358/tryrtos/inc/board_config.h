@@ -11,4 +11,6 @@
 #define PMU_US_TO_TICK(x)       (x * 500)
 #define PMU_TICK_TO_US(x)       (x / 500)
 
+#define MMU_VA_TO_PA(x)         (x - 0x40000000)
+
 #endif /* DEVICE_MEMORY_H_ */

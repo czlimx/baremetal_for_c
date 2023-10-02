@@ -12,7 +12,7 @@
 #include "board_config.h"
 #include "board_init.h"
 
-extern uint32_t _bss_start_[], _bss_end_[];
+extern char _bss_start_[], _bss_end_[];
 
 /**
  * @brief  The early init for CPU.
@@ -20,7 +20,7 @@ extern uint32_t _bss_start_[], _bss_end_[];
 void _early_arch_init(void)
 {
     /* clear bss section */
-    memset((void*)_bss_start_, 0, _bss_end_ - _bss_start_);
+    memset((void*)MMU_VA_TO_PA(_bss_start_), 0, _bss_end_ - _bss_start_);
 
     /* board early init */
     board_early_init();

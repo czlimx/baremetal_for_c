@@ -30,14 +30,14 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/libc)
 # Pick up the port specific variables and apply them
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/arch/${RTOS_ARCH})
 
-# Pick up the kernel stuff
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/kernel/${RTOS_KERNEL})
+# Pick up the board stuff
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/board/${RTOS_BOARD}/${RTOS_KERNEL})
 
 # Pick up the driver stuff
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/driver/${RTOS_CPU})
 
-# Pick up the board stuff
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/board/${RTOS_BOARD}/${RTOS_KERNEL})
+# Pick up the kernel stuff
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/code/kernel/${RTOS_KERNEL})
 
 # post build command
 add_custom_command(
