@@ -1,6 +1,7 @@
 #include "arch_irq.h"
 #include "sdrv_intc.h"
 #include "arch_cpsr.h"
+#include "board_config.h"
 
 /**
  * @brief Define architecture-dependent interrupt handling data types.

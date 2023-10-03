@@ -7,6 +7,12 @@
  * @brief  Start target thread context.
  * @ptr:   the context potnter
  */
+void arch_context_first_start(uint32_t *ptr);
+
+/**
+ * @brief  Start target thread context.
+ * @ptr:   the context potnter
+ */
 void arch_context_start(uint32_t *ptr);
 
 /**

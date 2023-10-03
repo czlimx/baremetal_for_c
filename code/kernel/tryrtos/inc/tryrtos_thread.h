@@ -10,9 +10,9 @@
 extern struct tryrtos_thread_type *tryrtos_cur_handler;
 
 /**
- * @brief  Define the system reschedule flag.
+ * @brief  Define the system handler flag.
  */
-extern volatile bool tryrtos_need_reschedule;
+extern struct tryrtos_thread_handle_type tryrtos_handler;
 
 /**
  * @brief   The thread creation processing.
@@ -49,27 +49,23 @@ void tryrtos_thread_init(void);
 /**
  * @brief   The thread init processing. 
  * @handle: the handle for thread
- * @ms:     the delay ms value
- */
-void tryrtos_thread_delay(struct tryrtos_thread_type *handle, uint32_t ms);
-
-/**
- * @brief   The thread init processing. 
- * @handle: the handle for thread
- */
-void tryrtos_thread_sort(struct tryrtos_thread_type *handle);
-
-/**
- * @brief   The thread init processing. 
- * @handle: the handle for thread
- */
-void tryrtos_thread_lookup(struct tryrtos_thread_type *handle);
-
-/**
- * @brief   The thread init processing. 
- * @handle: the handle for thread
  */
 void tryrtos_thread_switch(struct tryrtos_thread_type *handle);
+
+/**
+ * @brief   The tick interrupt handler. 
+ */
+void tryrtos_tick_handler(void);
+
+/**
+ * @brief   The Realize proactively giving up the CPU usage interface. 
+ */
+void tryrtos_thread_yield(void);
+
+/**
+ * @brief   The Realize actively calling delay to give up the running interface. 
+ */
+void tryrtos_thread_delay(uint32_t ms);
 
 /**
  * @brief   The interrupt handler call back interface. 

@@ -28,4 +28,9 @@ void board_init(void);
  */
 void udelay(uint32_t us);
 
+/**
+ * @brief  The call back for interrupt.
+ */
+void board_interrupt_call_back(void);
+
 #endif /* EXAMPLE_EARLAY_INIT_H_ */

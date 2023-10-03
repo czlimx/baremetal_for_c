@@ -26,10 +26,11 @@ void tryrtos_idle_entry(void *para)
         /* Check if any tasks need to be scheduled */
         //tryrtos_interrupt_call_back();
         
-        uint64_t busy_tick = tryrtos_kernel_tick - tryrtos_idle_handler.running_tick;
-        uint32_t cpu_load  = busy_tick / tryrtos_kernel_tick;
-        printf("CPU load is %d%%\r\n", cpu_load);
-        
+        //uint64_t busy_tick = tryrtos_kernel_tick - tryrtos_idle_handler.running_tick;
+        //uint32_t cpu_load  = busy_tick / tryrtos_kernel_tick;
+        //printf("CPU load is %d%%\r\n", cpu_load);
+
+        tryrtos_thread_yield();
     }
 }
 
@@ -53,6 +54,9 @@ void tryrtos_kernel_start(void)
                           tryrtos_idle_entry,
                           tryrtos_idle_stack, 
                           TRYRTOS_IDLE_STACK_LENGTH);
-    tryrtos_thread_switch(&tryrtos_idle_handler);
+    /* update the state */
+    tryrtos_handler.current = &tryrtos_idle_handler;
+    tryrtos_idle_handler.state = TRYRTOS_THREAD_RUNNING;
+    tryrtos_context_first_start(tryrtos_idle_handler.stack_ptr);
 }
 

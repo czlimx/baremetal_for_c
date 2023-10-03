@@ -1,9 +1,12 @@
-#ifndef DEVICE_MEMORY_H_
-#define DEVICE_MEMORY_H_
+#ifndef TRYRTOS_CONFIG_H_
+#define TRYRTOS_CONFIG_H_
 
 #include "libc_memory.h"
 #include "arch_context.h"
 #include "libc_printf.h"
+#include "board_init.h"
+#include "tryrtos_thread.h"
+
 
 /**
  * @brief  Define the free thread stack space capacity.
@@ -38,8 +41,11 @@
 /**
  * @brief  Redefine the context switch interface.
  */
-#define arch_interrupt_call_back()              tryrtos_interrupt_call_back()
+#define tryrtos_context_first_start(ptr)        arch_context_first_start(ptr)
 
+/**
+ * @brief  Redefine the delay switch interface.
+ */
+#define tryrtos_loop_mdelay(x)                  udelay(x * 1000)
 
-
-#endif /* DEVICE_MEMORY_H_ */
+#endif /* TRYRTOS_CONFIG_H_ */

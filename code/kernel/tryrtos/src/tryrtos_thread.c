@@ -3,15 +3,9 @@
 #include "tryrtos_tick.h"
 
 /**
- * @brief  Define the current thread handler pointer.
+ * @brief  Define the system handler flag.
  */
-struct tryrtos_thread_type *tryrtos_cur_handler = NULL;
-
-/**
- * @brief  Define the system reschedule flag.
- */
-volatile bool tryrtos_need_reschedule = false;
-
+struct tryrtos_thread_handle_type tryrtos_handler;
 /**
  * @brief Define all priority hash map tables.
  */
@@ -141,48 +135,10 @@ void tryrtos_thread_init(void)
     libc_list_init(&tryrtos_delay_head);
 
     /* init the reschedule flag */
-    tryrtos_need_reschedule = false;
-}
-
-/**
- * @brief   The thread init processing. 
- * @handle: the handle for thread
- * @ms:     the delay ms value
- */
-void tryrtos_thread_delay(struct tryrtos_thread_type *handle, uint32_t ms)
-{
-    if (NULL == handle)
-        return;
-
-    if (0U == ms)
-        return;
-
-    /* init thread delay tick infomation */
-    handle->delay_tick = ms;
-
-    /* update the state */
-    handle->state = TRYRTOS_THREAD_DELAY;
-
-    /* move the node to the delay list*/
-    libc_list_move(&handle->node, &tryrtos_delay_head);
-}
-
-/**
- * @brief   The thread init processing. 
- * @handle: the handle for thread
- */
-void tryrtos_thread_sort(struct tryrtos_thread_type *handle)
-{
-    (void)handle;
-}
-
-/**
- * @brief   The thread init processing. 
- * @handle: the handle for thread
- */
-void tryrtos_thread_lookup(struct tryrtos_thread_type *handle)
-{
-    (void)handle;
+    tryrtos_handler.preempt_effect = false;
+    tryrtos_handler.timeslice_expire = false;
+    tryrtos_handler.current = NULL;
+    tryrtos_handler.preempt = NULL;
 }
 
 /**
@@ -196,50 +152,34 @@ void tryrtos_thread_switch(struct tryrtos_thread_type *handle)
     if (handle == NULL)
         return;
 
-    /* clear the forgo tick */
-    handle->forgo_tick = TRYRTOS_MAX_TICK_SCHEDULE;
-
-    /* init the reschedule flag */
-    tryrtos_need_reschedule = false;
-
-    if (handle == tryrtos_cur_handler)
+    if (handle == tryrtos_handler.current)
         return;
 
     if ((TRYRTOS_THREAD_READY != handle->state) &&
         (TRYRTOS_THREAD_PENDING != handle->state))
         return;
 
-    if (tryrtos_cur_handler != NULL)
-        tryrtos_cur_handler->state = TRYRTOS_THREAD_PENDING;
+    /* restore the forgo tick */
+    handle->forgo_tick = TRYRTOS_MAX_TICK_SCHEDULE;
 
     /* switch the thread context */
     if (TRYRTOS_THREAD_READY == handle->state)
     {
         /* update the state */
-        tryrtos_cur_handler = handle;
+        tryrtos_handler.current = handle;
         handle->state = TRYRTOS_THREAD_RUNNING;
         tryrtos_context_start(handle->stack_ptr);
     }
     else
     {
         /* update the state */
-        temp_handler = tryrtos_cur_handler;
-        tryrtos_cur_handler = handle;
+        temp_handler = tryrtos_handler.current;
+        tryrtos_handler.current = handle;
         handle->state = TRYRTOS_THREAD_RUNNING;
         tryrtos_context_switch(temp_handler->stack_ptr, handle->stack_ptr);
     }
 }
 
-/**
- * @brief   The interrupt handler call back interface. 
- */
-void tryrtos_interrupt_call_back(void)
-{
-    if (tryrtos_need_reschedule == false)
-        return;
-
-    /* tryrtos_thread_lookup */
-}
 
 /**
  * @brief   The tick interrupt handler. 
@@ -253,13 +193,13 @@ void tryrtos_tick_handler(void)
     tryrtos_tick_add();
 
     /* update the current thread tick */
-    tryrtos_cur_handler->running_tick++;
+    tryrtos_handler.current->running_tick++;
 
     /* update the current thread forgo tick */
-    if (tryrtos_cur_handler->forgo_tick > 0)
-        tryrtos_cur_handler->forgo_tick--;
-    if (tryrtos_cur_handler->forgo_tick == 0U)
-        tryrtos_need_reschedule = true;
+    if (tryrtos_handler.current->forgo_tick > 0)
+        tryrtos_handler.current->forgo_tick--;
+    if (tryrtos_handler.current->forgo_tick == 0)
+        tryrtos_handler.timeslice_expire = true;
 
     /* update all delay list tick */
     if (true == libc_list_is_empty(&tryrtos_delay_head))
@@ -281,9 +221,215 @@ void tryrtos_tick_handler(void)
 
             /* move the thread to ready list */
             libc_list_move(&handle->node, &tryrtos_ready_array[handle->priority]);
+
+            if (handle->priority < tryrtos_handler.current->priority)
+            {
+                tryrtos_handler.preempt = handle;
+                tryrtos_handler.preempt_effect = true;
+            }
         }
 
         node = node->next;
         
     } while (false == libc_list_is_head(node, &tryrtos_delay_head));
+}
+
+/**
+ * @brief   The Realize proactively giving up the CPU usage interface. 
+ */
+void tryrtos_thread_yield(void)
+{
+    struct libc_list_type *node = NULL;
+    struct tryrtos_thread_type *current = NULL, *smaller = NULL;
+
+    /* lookup the thread with the fewest ticks running at the highest priority */
+    for (uint32_t i = 0; i < TRYRTOS_MAX_SCHEDULER_PRIORITY; i++)
+    {
+        if (true == libc_list_is_empty(&tryrtos_ready_array[i]))
+            continue;
+
+        node = tryrtos_ready_array[i].next;
+        while (false == libc_list_is_head(node, &tryrtos_ready_array[i]))
+        {
+            current = libc_list_entry(node, struct tryrtos_thread_type, node);
+            if (current == tryrtos_handler.current)
+            {
+                node = node->next;
+                continue;
+            }
+            
+            if (smaller == NULL)
+                smaller = current;
+            else
+            {   
+                if (current->running_tick < smaller->running_tick)
+                    smaller = current;
+            } 
+            
+            node = node->next;
+        }
+
+        if (smaller != NULL)
+            break;
+    }
+
+    if (smaller == NULL)
+        return;
+
+    /* update the state */
+    tryrtos_handler.current->state = TRYRTOS_THREAD_PENDING;
+
+    tryrtos_thread_switch(smaller);
+}
+
+/**
+ * @brief   The Realize actively calling delay to give up the running interface. 
+ */
+void tryrtos_thread_delay(uint32_t ms)
+{
+    struct libc_list_type *node = NULL;
+    struct tryrtos_thread_type *current = NULL, *smaller = NULL;
+    if (0U == ms)
+        return;
+
+    /* lookup the thread with the fewest ticks running at the highest priority */
+    for (uint32_t i = 0; i < TRYRTOS_MAX_SCHEDULER_PRIORITY; i++)
+    {
+        if (true == libc_list_is_empty(&tryrtos_ready_array[i]))
+            continue;
+
+        node = tryrtos_ready_array[i].next;
+        while (false == libc_list_is_head(node, &tryrtos_ready_array[i]))
+        {
+            current = libc_list_entry(node, struct tryrtos_thread_type, node);
+            if (current == tryrtos_handler.current)
+            {
+                node = node->next;
+                continue;
+            }
+            
+            if (smaller == NULL)
+                smaller = current;
+            else
+            {   
+                if (current->running_tick < smaller->running_tick)
+                    smaller = current;
+            } 
+            
+            node = node->next;
+        }
+
+        if (smaller != NULL)
+            break;
+    }
+
+    /* update the state */
+    tryrtos_handler.current->state = TRYRTOS_THREAD_DELAY;
+
+    /* move the node to the delay list*/
+    libc_list_move(&tryrtos_handler.current->node, &tryrtos_delay_head);
+
+    if (smaller == NULL)
+    {
+        tryrtos_loop_mdelay(ms);
+        tryrtos_handler.current->state = TRYRTOS_THREAD_PENDING;
+        libc_list_move(&tryrtos_handler.current->node, 
+            &tryrtos_ready_array[tryrtos_handler.current->priority]);
+    }    
+    else
+    {
+        /* init thread delay tick infomation */
+        tryrtos_handler.current->delay_tick = ms;
+        tryrtos_thread_switch(smaller);
+    }
+}
+
+/**
+ * @brief   The Implement preemption scheduling interface. 
+ */
+static void tryrtos_thread_preempt(void)
+{
+    struct tryrtos_thread_type *preempt = NULL;
+
+    if (NULL == tryrtos_handler.preempt)
+        return;
+
+    if (false == tryrtos_handler.preempt_effect)
+        return;
+
+    /* update the state */
+    tryrtos_handler.current->state = TRYRTOS_THREAD_PENDING;
+
+    /* restore preempt infomation */
+    preempt = tryrtos_handler.preempt;
+    tryrtos_handler.preempt = NULL;
+    tryrtos_handler.preempt_effect = false;
+
+    tryrtos_thread_switch(preempt);
+}
+
+/**
+ * @brief   The Implement time slice rotation interface. 
+ */
+static void tryrtos_thread_timeslice(void)
+{
+    uint8_t priority = tryrtos_handler.current->priority;
+    struct tryrtos_thread_type *current = NULL, *smaller = NULL;
+    struct libc_list_type *node = tryrtos_ready_array[priority].next;
+
+    if (false == tryrtos_handler.timeslice_expire)
+        return;
+
+    if (true == tryrtos_handler.preempt_effect)
+    {
+        tryrtos_handler.timeslice_expire = false;
+        return;
+    } 
+
+    /* check the list is empty ? */
+    if (true == libc_list_is_empty(&tryrtos_ready_array[priority]))
+        return;
+
+    /* lookup the thread with the fewest ticks running at the same priority */
+    while (false == libc_list_is_head(node, &tryrtos_ready_array[priority]))
+    {
+        current = libc_list_entry(node, struct tryrtos_thread_type, node);
+        if (current == tryrtos_handler.current)
+        {
+            node = node->next;
+            continue;
+        }
+        
+        if (smaller == NULL)
+            smaller = current;
+        else
+        {
+            if (current->running_tick < smaller->running_tick)
+                smaller = current;
+        }    
+        
+        node = node->next;
+    }
+
+    if (smaller == NULL)
+        return;
+
+    /* update the state */
+    tryrtos_handler.current->state = TRYRTOS_THREAD_PENDING;
+    
+    /* restore timeslice infomation */
+    tryrtos_handler.timeslice_expire = false;
+    tryrtos_thread_switch(smaller);
+}
+
+/**
+ * @brief   The interrupt handler call back interface. 
+ */
+void tryrtos_interrupt_call_back(void)
+{
+    if (tryrtos_handler.timeslice_expire == true)
+        tryrtos_thread_timeslice();
+
+    if (tryrtos_handler.preempt_effect == true)
+        tryrtos_thread_preempt();
 }

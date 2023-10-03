@@ -29,9 +29,4 @@ void tryrtos_tick_add(void);
  */
 void tryrtos_tick_sub(void);
 
-/**
- * @brief   The tick interrupt handler. 
- */
-void tryrtos_tick_handler(void);
-
 #endif /* TRYRTOS_TICK_H_ */

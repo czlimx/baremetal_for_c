@@ -2,6 +2,7 @@
     .global do_data_abort
     .global do_irq
     .extern sdrv_irq_handler
+    .weak   board_interrupt_call_back
 
     .section .text.arch.exception, "ax", %progbits
     .arm
@@ -18,6 +19,10 @@ do_prefetch_abort:
 do_data_abort:
     b do_data_abort
 
+
+board_interrupt_call_back:
+    bx lr
+
 /**
  * @brief  interrupt handler.
  */
@@ -30,6 +35,7 @@ do_irq:
 
     /* handling interrupt exceptions */
     bl sdrv_irq_handler
+    bl board_interrupt_call_back
 
     /* restore general register */
     ldmfd sp!, {r0-r12, pc}^

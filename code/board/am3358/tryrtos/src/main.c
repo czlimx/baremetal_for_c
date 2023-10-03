@@ -9,6 +9,15 @@
 #include "tryrtos_thread.h"
 
 /**
+ * @brief  The call back for interrupt.
+ */
+void board_interrupt_call_back(void)
+{
+    tryrtos_interrupt_call_back();
+}
+
+
+/**
  * @brief  The udelay for pmu.
  */
 void udelay(uint32_t us)

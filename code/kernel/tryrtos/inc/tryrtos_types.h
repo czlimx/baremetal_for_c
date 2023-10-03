@@ -46,4 +46,15 @@ struct tryrtos_thread_type {
     uint32_t *stack_ptr;                    /** @brief the pointer for init context after */
 };
 
+/**
+ * @brief Define a collection of thread handler members.
+ */
+struct tryrtos_thread_handle_type 
+{
+    struct tryrtos_thread_type *current;    /** @brief the pointer for the current thread */
+    struct tryrtos_thread_type *preempt;    /** @brief the pointer for the preempt thread */
+    bool preempt_effect;                    /** @brief the flag for the preempt take effect */
+    bool timeslice_expire;                  /** @brief the flag for the time slice expires */
+};
+
 #endif /* TRYRTOS_TYPES_H_ */

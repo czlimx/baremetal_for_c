@@ -1,9 +1,34 @@
+    .global arch_context_first_start
     .global arch_context_start
     .global arch_context_init
     .global arch_context_switch
 
     .section .text.arch.context, "ax", %progbits
     .arm
+
+/**
+ * @brief  start target thread context.
+ * @r0:    the stack potnter
+ */
+arch_context_first_start:
+    mov    sp,  r0
+    /* restore the floating point context::left to right  */
+    ldmfd  sp!, {r3}
+    fmxr   fpscr, r3 
+	vpop   {d0-d15}
+
+    /* restore the cpsr + spsr register::left to right  */
+    ldmfd  sp!, {r2-r3}
+    mov    r1,  sp
+    msr    spsr_cxsf, r2
+    msr    cpsr_cxsf, r3
+
+    /* restore the general register: right to left */
+    mov    sp,  r1
+    ldmfd  sp!, {r0-r12, lr}
+
+    /* goto entry, is nerver return */
+    mov    pc, lr
 
 /**
  * @brief  start target thread context.
